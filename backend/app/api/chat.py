@@ -12,7 +12,7 @@ router = APIRouter()
 class Message(BaseModel):
     """Use this data model to parse the request body JSON."""
 
-    user_messa: str
+    user_message: str
 
 
 @router.post("/chat/")
