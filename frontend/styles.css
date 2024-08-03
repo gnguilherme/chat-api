@@ -1,0 +1,28 @@
+/* frontend/styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#chat-container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: calc(100% - 60px);
+}
+
+button {
+    width: 50px;
+}
