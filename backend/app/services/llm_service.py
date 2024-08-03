@@ -1,11 +1,12 @@
 """This module contains the service for the OpenAI API."""
 
+from app.models.message import Message
 from openai import AzureOpenAI
 
 llm = AzureOpenAI()
 
 
-async def get_response(user_message: str) -> str:
+async def get_response(user_message: str) -> Message:
     """Return a response from the chatbot.
 
     Args:
@@ -14,7 +15,7 @@ async def get_response(user_message: str) -> str:
 
     Returns:
     -------
-        str: The chatbot's response.
+        Message: The chatbot's response.
 
     """
     response = llm.chat.completions.create(
@@ -25,4 +26,4 @@ async def get_response(user_message: str) -> str:
         ],
     )
 
-    return response.choices[0].message["content"]
+    return Message(user_message=user_message, response=response.choices[0].message.content)
