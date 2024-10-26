@@ -15,5 +15,5 @@ document.getElementById('send-button').addEventListener('click', async () => {
     });
 
     const data = await response.json();
-    messagesDiv.innerHTML += `<div>Bot: ${data.response}</div>`;
+    messagesDiv.innerHTML += `<div>Bot: ${data.response.response}</div>`;
 });
