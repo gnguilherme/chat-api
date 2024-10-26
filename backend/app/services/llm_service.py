@@ -1,9 +1,9 @@
 """This module contains the service for the OpenAI API."""
 
 from app.models.message import Message
-from openai import AzureOpenAI
+from openai import OpenAI
 
-llm = AzureOpenAI()
+llm = OpenAI()
 
 
 async def get_response(user_message: str) -> Message:
@@ -19,7 +19,7 @@ async def get_response(user_message: str) -> Message:
 
     """
     response = llm.chat.completions.create(
-        model="gpt4o",
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": user_message},
